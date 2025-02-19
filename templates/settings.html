@@ -1,0 +1,86 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+    <style>
+        /* Settings Page Specific Styles */
+        .settings-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .settings-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .settings-container label {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .settings-container input {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .settings-container button {
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .settings-container button:hover {
+            background-color: #2980b9;
+        }
+
+        .settings-container .info {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+    </style>
+
+    <div class="settings-container">
+        <h2>Settings</h2>
+        
+        <!-- User Information Display -->
+        <div class="info">
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+
+        <!-- Update Username, Email, and Password Form -->
+        <form method="POST">
+            <label for="username">New Username:</label>
+            <input type="text" name="username" value="{{ user.username }}" required>
+
+            <label for="email">New Email:</label>
+            <input type="email" name="email" value="{{ user.email }}" required>
+
+            <label for="password">New Password:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Update Info</button>
+        </form>
+    </div>
+{% endblock %}
