@@ -22,4 +22,4 @@ This project provides a simple user registration and login system where users ca
 To get started with the project, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/project-repo.git
+git clone https://github.com/miki2144/Flask-Admin.git
